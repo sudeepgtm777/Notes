@@ -1,9 +1,9 @@
-const express = require('express');
+import express from 'express';
+import { getAllNotes } from '../controllers/noteController.js';
+
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.status(200).send('hello');
-});
+router.get('/', getAllNotes);
 
 router.post('/', (req, res) => {
   res.status(200).send('hello');
@@ -17,4 +17,4 @@ router.delete('/:id', (req, res) => {
   res.status(200).json({ message: 'Note deleted sucessfully' });
 });
 
-module.exports = router;
+export default router;
