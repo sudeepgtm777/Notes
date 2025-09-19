@@ -5,9 +5,11 @@ import dotenv from 'dotenv';
 
 const app = express();
 
+app.use(express.json());
+
 app.use('/api/notes', noteRoutes);
 
-dotenv.config({ path: './src/config.env' });
+dotenv.config({ path: './config.env' });
 
 // Build DB string
 const DB = process.env.DATABASE;
