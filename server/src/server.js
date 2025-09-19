@@ -1,12 +1,21 @@
 import express from 'express';
 import noteRoutes from './routes/noteRoutes.js';
 import mongoose from 'mongoose';
+import rateLimit from 'express-rate-limit';
+
 import dotenv from 'dotenv';
 
 const app = express();
 
 app.use(express.json());
 
+// Rate Limit middleware 15 min max 100 request
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: 'Too many requests, try again later.',
+});
+app.use(limiter);
 app.use('/api/notes', noteRoutes);
 
 dotenv.config({ path: './config.env' });
