@@ -1,0 +1,37 @@
+[
+  {
+    "_id": "64f44c1a8c5e9b3f2c111111",
+    "title": "Meeting Notes",
+    "content": "Discussed project roadmap and assigned tasks for the upcoming sprint.",
+    "createdAt": "2025-09-01T10:00:00.000Z",
+    "updatedAt": "2025-09-01T10:00:00.000Z"
+  },
+  {
+    "_id": "64f44c1a8c5e9b3f2c111112",
+    "title": "Shopping List",
+    "content": "Milk, Bread, Eggs, Coffee, Apples, Bananas",
+    "createdAt": "2025-09-02T15:30:00.000Z",
+    "updatedAt": "2025-09-02T15:30:00.000Z"
+  },
+  {
+    "_id": "64f44c1a8c5e9b3f2c111113",
+    "title": "Ideas for Blog",
+    "content": "1. Why React is still popular\n2. Node.js vs Deno\n3. MongoDB best practices",
+    "createdAt": "2025-09-03T09:15:00.000Z",
+    "updatedAt": "2025-09-03T09:15:00.000Z"
+  },
+  {
+    "_id": "64f44c1a8c5e9b3f2c111114",
+    "title": "Workout Routine",
+    "content": "Monday: Chest & Triceps\nWednesday: Back & Biceps\nFriday: Legs & Shoulders",
+    "createdAt": "2025-09-04T18:00:00.000Z",
+    "updatedAt": "2025-09-04T18:00:00.000Z"
+  },
+  {
+    "_id": "64f44c1a8c5e9b3f2c111115",
+    "title": "Travel Checklist",
+    "content": "Passport, Flight tickets, Hotel booking, Chargers, Clothes, Camera",
+    "createdAt": "2025-09-05T12:45:00.000Z",
+    "updatedAt": "2025-09-05T12:45:00.000Z"
+  }
+]
