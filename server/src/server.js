@@ -12,7 +12,7 @@ const app = express();
 // Rate Limit middleware 15 min max 100 request
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 2,
+  max: 100,
   message: 'Too many requests, try again later.',
 });
 app.use(
