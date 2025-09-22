@@ -6,7 +6,7 @@ import { formatDate } from '../utils/utils';
 const NoteCard = ({ note }) => {
   return (
     <Link
-      to={`/notes/${note._id}`}
+      to={`/note/${note._id}`}
       className='card bg-base-200 hover:shadow-lg transition-all duration-200 border-t-4 border-solid border-[#fffff]'
     >
       <div className='card-body'>
