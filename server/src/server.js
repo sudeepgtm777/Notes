@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import path from 'path';
 import rateLimit from 'express-rate-limit';
 import noteRoutes from './routes/noteRoutes.js';
 
@@ -8,6 +9,7 @@ import dotenv from 'dotenv';
 
 dotenv.config({ path: './config.env' });
 const app = express();
+const __dirname = path.resolve();
 
 // Rate Limit middleware 15 min max 100 request
 const limiter = rateLimit({
@@ -15,15 +17,26 @@ const limiter = rateLimit({
   max: 100,
   message: 'Too many requests, try again later.',
 });
-app.use(
-  cors({
-    origin: 'http://localhost:5173',
-  })
-);
+
+if (process.env.NODE_ENV !== 'production') {
+  app.use(
+    cors({
+      origin: 'http://localhost:5173',
+    })
+  );
+}
 app.use(express.json());
 app.use(limiter);
 
 app.use('/api/notes', noteRoutes);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/dist')));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client', 'dist', 'index.html'));
+  });
+}
 
 const DB = process.env.DATABASE;
 
